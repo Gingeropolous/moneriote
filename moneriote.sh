@@ -48,7 +48,18 @@ do
 	export lhit="$(curl -X POST http://192.168.1.9:18081/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
 	echo "Local height: " $lhit
 	monero-wallet-rpc --daemon-host $p --wallet-file $DIR/$wallet --password $pass --rpc-bind-port $wrpc & \
-	sleep 5
+	end=$((SECONDS+60))
+	goteem=0
+	while [ $SECONDS -lt $end  ||  $goteem=="0" ] ; ### GODDAMN YOU SOINOFBITCH JUST WORK
+	do
+	if [ "$(tail -4 monero-wallet-cli.log | grep "net_service" )" ] ;
+	then
+	echo "GOTTEEEM"
+	goteem=1
+	fi
+	sleep 1
+	done
+
 	echo "Checking node $i"
 
 	export rhit="$(curl -X POST http://127.0.0.1:18092/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"getheight"}' -H 'Content-Type: application/json' | grep height | cut -f 2 -d :)"
@@ -64,6 +75,7 @@ do
 	echo "Daemon $p is good" 
 	fi
 	curl -X POST http://127.0.0.1:18092/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"stop_wallet"}' -H 'Content-Type: application/json'
+	sleep 2
 done
 
 #monero-wallet-rpc --daemon-host $daemon --wallet-file $DIR/$wallet --wallet-password $pass --rpc-bind-port $wrpc

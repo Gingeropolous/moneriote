@@ -11,6 +11,7 @@ arr=($IPs)
 for i in "${arr[@]}"
 do
    : 
-	CHECK=$(nc -z -v -w5 $i 18081)
-	echo $CHECK
+	if nc -z $i 18081 ; then echo "$i is up" ; fi
+
+
 done

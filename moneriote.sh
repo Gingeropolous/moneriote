@@ -31,7 +31,6 @@ do
 done
 
 echo ${opennodes[@]}
-export opennodes
 
 # Check network white nodes for domains to add
 
@@ -41,8 +40,8 @@ white_a=($white)
 
 # Check to see if wallet connects and is behaving good (matches local daemon height +/- a few)
 
-export arr_onodes=($opennodes)
-for p in "${arr_onodes[@]}"
+echo ${opennodes[@]}
+for p in "${opennodes[@]}"
 do
    : 
 	export lhit="$(curl -X POST http://192.168.1.9:18081/getheight -H 'Content-Type: application/json' | grep height | cut -f 2 -d : | cut -f 1 -d ,)"
@@ -52,12 +51,12 @@ do
 	goteem=0
 	while (( SECONDS < end && goteem == 0 ))
 	do
-	if [ "$(tail -4 monero-wallet-cli.log | grep "net_service" )" ] ;
-	then
-	echo "GOTTEEEM"
-	goteem=1
-	fi
-	sleep 1
+		if [ "$(tail -4 monero-wallet-cli.log | grep "net_service" )" ] ;
+			then
+			echo "GOTTEEEM"
+			goteem=1
+		fi
+		sleep 1
 	done
 
 	echo "Checking node $i"
@@ -75,7 +74,8 @@ do
 	echo "Daemon $p is good" 
 	fi
 	curl -X POST http://127.0.0.1:18092/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"stop_wallet"}' -H 'Content-Type: application/json'
-	sleep 2
+	sleep 0.5
+	rm monero-wallet-cli.log
 done
 
 #monero-wallet-rpc --daemon-host $daemon --wallet-file $DIR/$wallet --wallet-password $pass --rpc-bind-port $wrpc

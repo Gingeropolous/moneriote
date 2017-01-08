@@ -12,3 +12,10 @@ Copyright © 2000 Your Name <gingeropolous@tutanots.com>
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See the COPYING file for more details.
+
+# DEPENDENCIES
+
+Bash
+Monero daemon (monerod) and monero-wallet-rpc in /bin/
+a folder called ~/files_moneriote with the test wallet files located their. I will make script that makes these
+a love of bash

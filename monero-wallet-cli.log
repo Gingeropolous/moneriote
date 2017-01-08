@@ -107,3 +107,31 @@
 2017-Jan-07 16:02:29.202446 [SRV_MAIN]Stopped wallet rpc server
 2017-Jan-07 16:02:29.202490 [SRV_MAIN]Storing wallet...
 2017-Jan-07 16:02:29.406037 [SRV_MAIN]Stored ok
+2017-Jan-07 20:07:39.842051 Monero 'Wolfram Warptangent' (v0.10.1.0-release)
+2017-Jan-07 20:07:39.842080 Setting log level = 0
+2017-Jan-07 20:07:39.842086 default_log: monero-wallet-cli.log
+2017-Jan-07 20:07:39.842095 Logging at log level 0 to /home/cacna1c/moneriote/monero-wallet-cli.log
+2017-Jan-07 20:07:39.842105 Loading wallet...
+2017-Jan-07 20:07:39.861303 Loaded wallet keys file, with public address: 421rhwa9en1UtJY4gYF9VbdscFLz6UXjQFE4MnSY9TCQHC9XtK8mweQaKzbMna1g6U1BKDMjD7DPQVUQE5pWuVRBGmJUB8x
+2017-Jan-07 20:07:44.448836 Loaded ok
+2017-Jan-07 20:07:44.449138 Binding on 127.0.0.1:18092
+2017-Jan-07 20:07:44.449290 Starting wallet rpc server
+2017-Jan-07 20:07:44.449341 Run net_service loop( 1 threads)...
+2017-Jan-07 20:07:52.909893 [SRV_MAIN]net_service loop stopped.
+2017-Jan-07 20:07:52.910176 [SRV_MAIN]Stopped wallet rpc server
+2017-Jan-07 20:07:52.910358 [SRV_MAIN]Storing wallet...
+2017-Jan-07 20:07:53.137988 [SRV_MAIN]Stored ok
+2017-Jan-07 20:08:56.559920 Monero 'Wolfram Warptangent' (v0.10.1.0-release)
+2017-Jan-07 20:08:56.559966 Setting log level = 0
+2017-Jan-07 20:08:56.559977 default_log: monero-wallet-cli.log
+2017-Jan-07 20:08:56.559987 Logging at log level 0 to /home/cacna1c/moneriote/monero-wallet-cli.log
+2017-Jan-07 20:08:56.559997 Loading wallet...
+2017-Jan-07 20:08:56.580351 Loaded wallet keys file, with public address: 421rhwa9en1UtJY4gYF9VbdscFLz6UXjQFE4MnSY9TCQHC9XtK8mweQaKzbMna1g6U1BKDMjD7DPQVUQE5pWuVRBGmJUB8x
+2017-Jan-07 20:08:58.190310 Loaded ok
+2017-Jan-07 20:08:58.190612 Binding on 127.0.0.1:18092
+2017-Jan-07 20:08:58.190757 Starting wallet rpc server
+2017-Jan-07 20:08:58.190817 Run net_service loop( 1 threads)...
+2017-Jan-07 20:08:59.821181 [SRV_MAIN]net_service loop stopped.
+2017-Jan-07 20:08:59.821209 [SRV_MAIN]Stopped wallet rpc server
+2017-Jan-07 20:08:59.821216 [SRV_MAIN]Storing wallet...
+2017-Jan-07 20:09:00.051137 [SRV_MAIN]Stored ok

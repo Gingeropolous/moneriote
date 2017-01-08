@@ -50,7 +50,7 @@ do
 	monero-wallet-rpc --daemon-host $p --wallet-file $DIR/$wallet --password $pass --rpc-bind-port $wrpc & \
 	end=$((SECONDS+60))
 	goteem=0
-	while [ $SECONDS -lt $end  ||  $goteem=="0" ] ; ### GODDAMN YOU SOINOFBITCH JUST WORK
+	while (( SECONDS < end && goteem == 0 ))
 	do
 	if [ "$(tail -4 monero-wallet-cli.log | grep "net_service" )" ] ;
 	then

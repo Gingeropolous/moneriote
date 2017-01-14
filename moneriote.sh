@@ -19,26 +19,24 @@ echo $daemon
 mkdir $DIR
 cd $DIR
 rm open_nodes.txt
-rm random_nodes.js
+rm random_nodes.html
 
 ### Begin header of random thinger
 
 echo -e "
-<!-- begin snippet: js hide: false console: false babel: false --> \n\
+
+<input type=\"\button\"\ id=\"\btnSearch\"\ value=\"\Search\"\ onclick=\"\GetValue();\"\ /> \n\
+<p id="message" ></p> \n\
 \n\
-<!-- language: lang-js --> \n\
+<script> \n\
+function GetValue() \n\
+{ \n\
+    var random = contents[Math.floor(Math.random() * myarray.length)]; \n\
+    //alert(random); \n\
+    document.getElementById(\"\message\"\).innerHTML=random; \n\
+} \n\
 \n\
-    var uls = document.querySelectorAll('ul'); \n\
-    for (var j = 0; j < uls.length; j++) { \n\
-      var ul = uls.item(j); \n\
-      for (var i = ul.children.length; i >= 0; i--) { \n\
-        ul.appendChild(ul.children[Math.random() * i | 0]); \n\
-      } \n\
-    } \n\
-\n\
-<!-- language: lang-html --> \n\
-\n\
-    <ul>\n\
+var contents=new Array() \n\
 " > random_nodes.html
 
 
@@ -84,6 +82,8 @@ echo ${#white_a[@]}
 echo "#############"
 echo "Starting loop"
 
+ctr=1
+
 for i in "${white_a[@]}"
 do
    : 
@@ -102,13 +102,35 @@ do
         ### Time to write these good ips to a file of some sort!
         ### Apparently javascript needs some weird format in order to randomize, so I'll make two outputs
         echo $i >> open_nodes.txt
-        echo "<li>$i</li>" >> random_nodes.html
+	echo "contents[$ctr]='$i'" >> random_nodes.html
+	ctr=$ctr+1
 	else
 	echo "$i is closed"
 	fi
 done
 
-echo "</ul>" >> random_nodes.html
+echo "</script>" >> random_nodes.html
 
 
+# http://stackoverflow.com/questions/16753876/javascript-button-to-pick-random-item-from-array
+# http://www.javascriptkit.com/javatutors/randomorder.shtml
+
+
+<input type="button" id="btnSearch" value="Search" onclick="GetValue();" />
+<p id="message" >ddd</p>
+
+<script>
+
+function GetValue()
+{
+    var myarray= new Array();
+  myarray[0]= "85.194.238.130";
+  myarray[1]= "176.31.117.66";
+  myarray[2]= "107.167.87.242";
+  myarray[3]= "38.135.33.74";
+  myarray[4]= "23.228.193.90";
+   var random = myarray[Math.floor(Math.random() * myarray.length)];
+   document.getElementById("message").innerHTML=random;
+}
+</script>
 

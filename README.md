@@ -15,7 +15,8 @@ as published by Sam Hocevar. See the COPYING file for more details.
 
 # DEPENDENCIES
 
-Bash
-Monero daemon (monerod) and monero-wallet-rpc in /bin/
-a folder called ~/files_moneriote with the test wallet files located their. I will make script that makes these
-a love of bash
+Bash  
+Monero daemon (monerod) and monero-wallet-rpc in /bin/  
+a folder called ~/files_moneriote with the test wallet files located their. I will make script that makes these  
+a love of bash 
+curl  

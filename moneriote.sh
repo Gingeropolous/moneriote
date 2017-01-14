@@ -86,7 +86,7 @@ do
         ### Apparently javascript needs some weird format in order to randomize, so I'll make two outputs
         echo $i >> open_nodes.txt
 	echo "myarray[$ctr]= \"$i\";" >> node_script.html
-	ctr=$ctr+1
+	let ctr=ctr+1
 	else
 	echo "$i is closed"
 	fi

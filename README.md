@@ -1,6 +1,6 @@
 # moneriote
 ## Portmanteu of Monero + Symbiote
-### A symbiotic relationship exists between those that run open nodes those that use them.
+### A symbiotic relationship exists between those that run open nodes and those that use them.
 
 Scripts to maintain a database of monero nodes with their RPC ports open
 

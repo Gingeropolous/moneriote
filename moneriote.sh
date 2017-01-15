@@ -1,14 +1,20 @@
 #!/bin/bash
 #Gingeropolous Open node checker
 
-
+# This is the directory where files are written to.
+# If you run as a cronjob, you have to use the full path
 DIR=~/files_moneriote
 
-
+# This is the path for your monerod binary.
 monerod=monerod
+
+# This is the ip of your local daemon. If you're not running an open node, 127.0.0.1 is fine.
 daemon=192.168.1.9
 
+# if you want to check or pull a DNS entry
 DOMAIN=node.moneroworld.com
+
+#Where your going to dump the file that will be published
 html_dir=/var/www/pool.com/public_html/pages/
 
 echo $monerod

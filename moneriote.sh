@@ -71,7 +71,7 @@ echo ${#white_a[@]}
 echo "#############"
 echo "Starting loop"
 
-ctr=1
+ctr=0
 
 for i in "${white_a[@]}"
 do

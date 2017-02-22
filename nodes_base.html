@@ -4,43 +4,53 @@
 <p>The Monero software architecture allows for an easy way to use Monero without downloading the entire blockchain.</p>
 <p>This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program. </p>
 <p>It is somewhat slower, and there is some information leak, <a href="http://monero.stackexchange.com/questions/38/what-privacy-or-security-trade-offs-are-associated-with-not-running-your-own-ful">as detailed here.</a></p>
-<p>That being said, no one can steal your monero because you use a remote node. But you should run your own node. Use these at your own risk!</p><h1>Random Nodes!</h1>
+<p>That being said, no one can steal your monero because you use a remote node. But you should run your own node. Use these at your own risk!</p>
+<br>
+<p>MoneroWorld maintains two different collections of open nodes. One is a collection of random nodes - anyone can offer their node up for inclusion, and MoneroWorld will detect it and include it. These are the Random Nodes seen below.</p>
+<p>The second type of open node are those listed as web addresses, like node.moneroworld.com. There are limited nodes in these addresses, and they're status isn't checked (yet). So they may be down.</p>
+
+<h1>Random Nodes!</h1>
 <p>MoneroWorld runs a script every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
 <input type="button" id="btnSearch" value="Get Random Node!" onclick="GetValue();" />
 <p id="message" >Press The Button!</p>
 <br>
 <p> To use with monero-wallet-cli, just use these commands </p>
 <h3>Windows</h3>
-<p><kbd>monero-wallet-cli.exe --daemon-host <span id="windows-node-ip">ADDRESS.OF.HOST</span>:18081</kbd></p>
+<p><kbd>monero-wallet-cli.exe --daemon-address <span id="windows-node-ip">ADDRESS.OF.HOST</span>:18089</kbd></p>
 <h3>Unix-type (ubuntu, MacOS)</h3>
-<p><kbd>./monero-wallet-cli --daemon-host <span id="unix-node-ip">ADDRESS.OF.HOST</span>:18081</kbd></p>
+<p><kbd>./monero-wallet-cli --daemon-address <span id="unix-node-ip">ADDRESS.OF.HOST</span>:18089</kbd></p>
 <br>
 <h3>Monero GUI</h3>
-<p>To use with the Monero GUI, enter the node address here (or the ip address). Be sure to enter the port (18081).
+<p>To use with the Monero GUI, enter the node address here (or the ip address). Be sure to enter the proper port!
 <img src="monero_gui_example.png" width="600">
 
-<h3>Available Moneroworld Open Node Addresses</h3>
+<h3>Non-random Moneroworld Open Node Addresses</h3>
+<p>How does it work? the open node addresses actually point to many different nodes - when you request one, one in the list is selected. So if it doesn't work once, just try again.</p>
 <br>
-<p><code>node.moneroworld.com:18081</code></p>
-<p>Largest list of open nodes. This includes the geo-located nodes below. Anyone can add nodes.</p>
-<p><code>europe.moneroworld.com:18081</code></p>
+<p><kbd>--daemon-host node.xmrbackb.one</kbd></p>
+<p>A high speed node network maintained by Snipa, developer and maintainer of xmrpool.net</p>
+<p><kbd>--daemon-host node.moneroworld.com</kbd></p>
+<p>Largest list of open nodes. This includes the geo-located nodes below.</p>
+<p><kbd>--daemon-host europe.moneroworld.com</kbd></p>
 <p>Nodes in Europe.</p>
-<p><code>useast.moneroworld.com:18081</code></p>
+<p><kbd>--daemon-host useast.moneroworld.com</kbd></p>
 <p>Nodes in US Eastern</p>
-<p><code>uswest.moneroworld.com:18081</code></p>
+<p><kbd>--daemon-host uswest.moneroworld.com</kbd></p>
 <p>Nodes in US Western</p>
-<p><code>india.moneroworld.com:18081</code></p>
+<p><kbd>--daemon-host india.moneroworld.com</kbd></p>
 <p>Nodes in India</p>
-<p><code>southafrica.moneroworld.com:18081</code></p>
+<p><kbd>--daemon-host southafrica.moneroworld.com</kbd></p>
 <p>Nodes in South Africa</p>
-<p><code>china.moneroworld.com:18081</code></p>
+<p><kbd>--daemon-host china.moneroworld.com</kbd></p>
 <p>Nodes in China</p>
 
-
 <br>
 
-<p>If you would like to offer your node up for inclusion in the Moneroworld Network of Open Nodes, please email me at gingeropolous@tutanota.com.</p>
-<p>How does it work? the open node addresses actually point to many different nodes - when you request one, one in the list is selected. So if it doesn't work once, just try again.</p>
+<p>If you would like to offer your node up for inclusion in the Moneroworld Network of Open Nodes, you have two options.</p>
+<p>Option 1: you can simply add the following code to the launch of your daemon (and open your firewall), and the MoneroWorld script will sniff you out and add your node to the random list</p>
+<p><kbd>--rpc-bind-ip YOUR.IP.GOES.HERE --rpc-bind-port 18089 --restricted-rpc</kbd></p>
+<p>Option 2: You can ask to be added to one of the address collection. There is limited space in these, so I only add high reliability nodes. You still need to launch your daemon with some special flags, and then please email me at gingeropolous@tutanota.com to ask me to add the node.</p>
+<p><kbd>--rpc-bind-ip YOUR.IP.GOES.HERE --rpc-bind-port 18081 --restricted-rpc</kbd></p>
 <br>
 <h3>Hidden Nodes</h3>
 <p>i2p: gyzyfxa6y2ayqbycvci3dz2pc2tjf6rnkcttvb3aubtxawkrmg5q.b32.i2p</p>

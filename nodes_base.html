@@ -1,10 +1,14 @@
 <center>
 <h1><span style="color:#000000;">Moneroworld Open Nodes</span></h1>
 <h3> <strong> What is an Open Node?</strong></h3>
-<p>The Monero software architecture allows for an easy way to use Monero without downloading the entire blockchain.</p>
-<p>This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program, a.k.a "node" </p>
+<h2>Use these at your own risk!</h2>
+<p>The Monero software architecture allows for an easy way to use Monero without downloading the entire blockchain.
+This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program, a.k.a "node" </p>
 <p>It is somewhat slower, and there is some information leak, <a href="http://monero.stackexchange.com/questions/38/what-privacy-or-security-trade-offs-are-associated-with-not-running-your-own-ful">as detailed here.</a></p>
-<p>That being said, no one can steal your monero because you use a remote node. But you should run your own node. Use these at your own risk!</p>
+<p>That being said, no one can steal your monero because you use a remote node. </p> 
+<h1>You should really run your own node</h1>
+<p>Its honestly not that hard - it can take 40 minutes to synchronize if you have a SSD and a good internet connection. Also, these remote nodes are NOT reliable. A lot of times they just won't connect, because the software really wasn't made for this.</p>
+<p>Download your node software here: <a href="https://getmonero.org/downloads/">GetMonero.org</a> and learn how to run the software <a href="https://getmonero.org/getting-started/running">here</a></p> 
 <br>
 <p>MoneroWorld maintains two different collections of open nodes. One is a collection of random nodes - anyone can offer their node up for inclusion, and MoneroWorld will detect it and include it. These are the Random Nodes seen below.</p>
 <p>The second type of open node are those listed as web addresses, like node.moneroworld.com. There are limited nodes in these addresses, and they're status isn't checked (yet). So they may be down.</p>
@@ -12,6 +16,7 @@
 <p>I run some of them, others run others.</p>
 <p>44UW4sPKb4XbWHm8PXr6K8GQi7jUs9i7t2mTsjDn2zK7jYZwNERfoHaC1Yy4PYs1eTCZ9766hkB6RLUf1y95EvCQNpCZnuu</p>
 <h1>Random Nodes!</h1>
+<p><a href="https://github.com/Gingeropolous/moneriote">Source Code to Run Your Own Version.<a/></p>
 <p>MoneroWorld runs a script every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
 <input type="button" id="btnSearch" value="Get Random Node!" onclick="GetValue();" />
 <p id="message" >Press The Button!</p>
@@ -50,11 +55,13 @@
 
 <p>If you would like to offer your node up for inclusion in the Moneroworld Network of Open Nodes, you have two options.</p>
 <p>Option 1: you can simply add the following code to the launch of your daemon (and open your firewall), and the MoneroWorld script will sniff you out and add your node to the random list</p>
-<p><kbd>--rpc-bind-ip YOUR.IP.GOES.HERE --rpc-bind-port 18089 --restricted-rpc</kbd></p>
+<p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 18089 --restricted-rpc --confirm-external-bind</kbd></p>
 <p>Option 2: You can ask to be added to one of the address collection. There is limited space in these, so I only add high reliability nodes. You still need to launch your daemon with some special flags, and then please email me at gingeropolous@tutanota.com to ask me to add the node.</p>
-<p><kbd>--rpc-bind-ip YOUR.IP.GOES.HERE --rpc-bind-port 18081 --restricted-rpc</kbd></p>
+<p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 18081 --restricted-rpc --confirm-external-bind</kbd></p>
 <br>
 <h3>Hidden Nodes</h3>
 <p>i2p: gyzyfxa6y2ayqbycvci3dz2pc2tjf6rnkcttvb3aubtxawkrmg5q.b32.i2p</p>
 <p>Please consider only using this to push transactions and not full wallet synchronization.</p>
 <p>monerotools.i2p also has a raw transaction pusher</p>
+<br>
+<p>Tor: monerowinfamlvkp.onion </p>

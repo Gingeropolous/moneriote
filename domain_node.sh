@@ -17,24 +17,19 @@ echo $daemon
 ###
 cd /home/monero/moneriote
 mkdir $DIR
-cp *.html $DIR
 cd $DIR
-rm open_nodes.txt
-rm nodes.html
-cp nodes_base.html nodes.html
-echo `date` "The script started" >> moneriote.log
+
+echo `date` "The domain script started" >> dom_nodes.txt
+echo `date` "Good nodes" >> good_dom_nodes.txt
+echo `date` "Bad nodes" >> bad_dom_nodes.txt
 
 ### Begin header of random thinger
-
-cp base.html node_script.html
 
 ### Check Existing DNS entries for any to remove
 ### Kind of stupid right now because I can't update a DNS entry
 
 export IPs=`dig $DOMAIN | grep $DOMAIN | grep -v ';' | awk '{ print $5 }'`;
 export arr=($IPs)
-# declare -a opennodes
-# declare -a closednodes
 
 for i in "${arr[@]}"
 do
@@ -49,19 +44,17 @@ do
 	fi
 done
 
-echo ${opennodes[@]}
-
+echo "open Nodes"
+echo ${opennodes[@]} >> dom_nodes.txt
+echo "closed nodes"
+echo ${closednodes[@]} >> dom_nodes.txt
 echo "##############"
 echo "Check network white nodes for domains to add"
 
-
-
-white=$($monerod --rpc-bind-ip $daemon print_pl | grep white | awk '{print $3}' | cut -f 1 -d ":")
-white_a=($white)
 white_a+=($opennodes)
 echo ${white_a[@]}
 echo "################"
-echo "Number of nodes: "${#white_a[@]} >> moneriote.log
+echo "Number of domain nodes: "${#white_a[@]} >> dom_nodes.txt
 
 
 echo "#############"
@@ -83,25 +76,21 @@ do
         echo "max is " $maxi
         if [[ "$r_hit" ==  "$l_hit"  ]] || [[ "$r_hit" > "$mini" && "$r_hit" < "$maxi" ]]
         then
-        echo "################################# Daemon $i is good" 
+        echo "################################# Daemon $i is good" >> dom_nodes.txt 
         ### Time to write these good ips to a file of some sort!
         ### Apparently javascript needs some weird format in order to randomize, so I'll make two outputs
-        echo $i >> open_nodes.txt
+	echo $i >> good_dom_nodes.txt
 	echo "myarray[$ctr]= \"$i\";" >> node_script.html
 	let ctr=ctr+1
 	else
-	echo "$i is closed"
+	echo "Daemon $i is closed" >> dom_nodes.txt
+	echo $i >> bad_dom_nodes.txt
 	fi
 done
 
-echo "Number of open nodes: $ctr" >> moneriote.log
+echo "Number of domain nodes: $ctr" >> dom_nodes.txt
 
-cat bottom.html >> node_script.html
-cat node_script.html >> nodes.html
-
-cp nodes.html $html_dir/
-
-echo `date` "The script finished" >> moneriote.log
+echo `date` "The Domain script finished" >> dom_nodes.txt
 
 # http://stackoverflow.com/questions/16753876/javascript-button-to-pick-random-item-from-array
 # http://www.javascriptkit.com/javatutors/randomorder.shtml

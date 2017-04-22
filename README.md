@@ -4,14 +4,14 @@
 
 Scripts to maintain a database of monero nodes with their RPC ports open
 
-There will be so much bash it won't be funy. 
+There will be so much bash it won't be funny. 
 
 License: http://www.wtfpl.net/
 
 Contributions welcome. All PRs will be considered. Make a branch, write it in a different language. :)
 
 
-Copyright © 2000 Your Name <gingeropolous@tutanota.com>
+Copyright © 2017 Gingeropolous <gingeropolous@tutanota.com>
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See the COPYING file for more details.

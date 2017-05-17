@@ -9,13 +9,13 @@ DIR=/home/monero/files_moneriote
 monerod=monerod
 
 # This is the ip of your local daemon. If you're not running an open node, 127.0.0.1 is fine.
-daemon=107.172.25.35
+daemon=107.167.87.242
 
 #Where your going to dump the file that will be published
 html_dir=/var/www/mine.moneroworld.com/public_html/pages/
 
 # Bound rpc port
-bport=18089
+bport=18081
 
 #Port to sniff for
 port=18089
@@ -39,7 +39,9 @@ cp base.html node_script.html
 echo "##############"
 echo "Check network white nodes for domains to add"
 
-white=$($monerod --rpc-bind-ip $daemon --rpc-bind-port $bport print_pl | grep white | awk '{print $3}' | cut -f 1 -d ":")
+white=$($monerod --rpc-bind-ip 107.172.25.35 --rpc-bind-port 18089 print_pl | grep white | awk '{print $3}' | cut -f 1 -d ":")
+
+
 white_a=($white)
 echo ${white_a[@]}
 echo "################"

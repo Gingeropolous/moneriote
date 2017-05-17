@@ -1,9 +1,10 @@
 <center>
+<iframe data-aa='472939' src='//ad.a-ads.com/472939?size=728x90' scrolling='no' style='width:728px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
 <h1><span style="color:#000000;">Moneroworld Open Nodes</span></h1>
 <h3> <strong> What is an Open Node?</strong></h3>
 <h2>Use these at your own risk!</h2>
 <p>The Monero software architecture allows for an easy way to use Monero without downloading the entire blockchain.
-This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program, a.k.a "node" </p>
+This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program, a.k.a "node" a.k.a. network service</p>
 <p>It is somewhat slower, and there is some information leak, <a href="http://monero.stackexchange.com/questions/38/what-privacy-or-security-trade-offs-are-associated-with-not-running-your-own-ful">as detailed here.</a></p>
 <p>That being said, no one can steal your monero because you use a remote node. </p> 
 <h1>You should really run your own node</h1>
@@ -11,15 +12,16 @@ This is called "using a remote node". Essentially, your wallet program connects 
 <p>Download your node software here: <a href="https://getmonero.org/downloads/">GetMonero.org</a> and learn how to run the software <a href="https://getmonero.org/getting-started/running">here</a></p> 
 <br>
 <p>MoneroWorld maintains two different collections of open nodes. One is a collection of random nodes - anyone can offer their node up for inclusion, and MoneroWorld will detect it and include it. These are the Random Nodes seen below.</p>
-<p>The second type of open node are those listed as web addresses, like node.moneroworld.com. There are limited nodes in these addresses, and they're status isn't checked (yet). So they may be down.</p>
+<p>The second type of open node are those listed as web addresses, like node.moneroworld.com. There are limited nodes in these addresses, and their status isn't checked (yet). So they may be down.</p>
 <h3>Please consider donating if you use these open nodes.</h3>
 <p>I run some of them, others run others.</p>
 <p>44UW4sPKb4XbWHm8PXr6K8GQi7jUs9i7t2mTsjDn2zK7jYZwNERfoHaC1Yy4PYs1eTCZ9766hkB6RLUf1y95EvCQNpCZnuu</p>
 <h1>Random Nodes!</h1>
-<p><a href="https://github.com/Gingeropolous/moneriote">Source Code to Run Your Own Version.<a/></p>
-<p>MoneroWorld runs a script every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
+<p>MoneroWorld runs a <a href="https://github.com/Gingeropolous/moneriote">script<a/> every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
 <input type="button" id="btnSearch" value="Get Random Node!" onclick="GetValue();" />
+<p>Note that these nodes use port 18089, not the standard 18081.</p>
 <p id="message" >Press The Button!</p>
+<p>There are <span id="numnodes">this many random nodes</span> available</p>
 <br>
 <p> To use with monero-wallet-cli, just use these commands </p>
 <h3>Windows</h3>
@@ -32,6 +34,7 @@ This is called "using a remote node". Essentially, your wallet program connects 
 <img src="monero_gui_example.png" width="600">
 
 <h3>Non-random Moneroworld Open Node Addresses</h3>
+<iframe data-aa='470448' src='//ad.a-ads.com/470448?size=120x60' scrolling='no' style='width:120px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
 <p>How does it work? the open node addresses actually point to many different nodes - when you request one, one in the list is selected. So if it doesn't work once, just try again.</p>
 <br>
 <p><kbd>--daemon-host node.xmrbackb.one</kbd></p>
@@ -44,12 +47,8 @@ This is called "using a remote node". Essentially, your wallet program connects 
 <p>Nodes in US Eastern</p>
 <p><kbd>--daemon-host uswest.moneroworld.com</kbd></p>
 <p>Nodes in US Western</p>
-<p><kbd>--daemon-host india.moneroworld.com</kbd></p>
-<p>Nodes in India</p>
 <p><kbd>--daemon-host southafrica.moneroworld.com</kbd></p>
 <p>Nodes in South Africa</p>
-<p><kbd>--daemon-host china.moneroworld.com</kbd></p>
-<p>Nodes in China</p>
 
 <br>
 
@@ -59,9 +58,11 @@ This is called "using a remote node". Essentially, your wallet program connects 
 <p>Option 2: You can ask to be added to one of the address collection. There is limited space in these, so I only add high reliability nodes. You still need to launch your daemon with some special flags, and then please email me at gingeropolous@tutanota.com to ask me to add the node.</p>
 <p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 18081 --restricted-rpc --confirm-external-bind</kbd></p>
 <br>
+<p><a href="https://github.com/Gingeropolous/moneriote">Run the script on your own daemon!<a/> 
 <h3>Hidden Nodes</h3>
 <p>i2p: gyzyfxa6y2ayqbycvci3dz2pc2tjf6rnkcttvb3aubtxawkrmg5q.b32.i2p</p>
 <p>Please consider only using this to push transactions and not full wallet synchronization.</p>
 <p>monerotools.i2p also has a raw transaction pusher</p>
 <br>
-<p>Tor: monerowinfamlvkp.onion </p>
+<h1>Tor remote nodes</h1>
+<p>monerowinfamlvkp.onion </p>

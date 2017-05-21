@@ -1,96 +1,68 @@
 <center>
+<iframe data-aa='472939' src='//ad.a-ads.com/472939?size=728x90' scrolling='no' style='width:728px; height:90px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
 <h1><span style="color:#000000;">Moneroworld Open Nodes</span></h1>
 <h3> <strong> What is an Open Node?</strong></h3>
-<p>The Monero software architecture allows for an easy way to use Monero without downloading the entire blockchain.</p>
-<p>This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program. </p>
+<h2>Use these at your own risk!</h2>
+<p>The Monero software architecture allows for an easy way to use Monero without downloading the entire blockchain.
+This is called "using a remote node". Essentially, your wallet program connects to someone elses monerod (blockchain) program, a.k.a "node" a.k.a. network service</p>
 <p>It is somewhat slower, and there is some information leak, <a href="http://monero.stackexchange.com/questions/38/what-privacy-or-security-trade-offs-are-associated-with-not-running-your-own-ful">as detailed here.</a></p>
-<p>That being said, no one can steal your monero because you use a remote node. But you should run your own node. Use these at your own risk!</p><h1>Random Nodes!</h1>
-<p>MoneroWorld runs a script every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
+<p>That being said, no one can steal your monero because you use a remote node. </p> 
+<h1>You should really run your own node</h1>
+<p>Its honestly not that hard - it can take 40 minutes to synchronize if you have a SSD and a good internet connection. Also, these remote nodes are NOT reliable. A lot of times they just won't connect, because the software really wasn't made for this.</p>
+<p>Download your node software here: <a href="https://getmonero.org/downloads/">GetMonero.org</a> and learn how to run the software <a href="https://getmonero.org/getting-started/running">here</a></p> 
+<br>
+<p>MoneroWorld maintains two different collections of open nodes. One is a collection of random nodes - anyone can offer their node up for inclusion, and MoneroWorld will detect it and include it. These are the Random Nodes seen below.</p>
+<p>The second type of open node are those listed as web addresses, like node.moneroworld.com. There are limited nodes in these addresses, and their status isn't checked (yet). So they may be down.</p>
+<h3>Please consider donating if you use these open nodes.</h3>
+<p>I run some of them, others run others.</p>
+<p>44UW4sPKb4XbWHm8PXr6K8GQi7jUs9i7t2mTsjDn2zK7jYZwNERfoHaC1Yy4PYs1eTCZ9766hkB6RLUf1y95EvCQNpCZnuu</p>
+<h1>Random Nodes!</h1>
+<p>MoneroWorld runs a <a href="https://github.com/Gingeropolous/moneriote">script<a/> every 30 minutes to  scan the Monero network for open nodes. Click the button to get an IP address of a random one!</p>
 <input type="button" id="btnSearch" value="Get Random Node!" onclick="GetValue();" />
+<p>Note that these nodes use port 18089, not the standard 18081.</p>
 <p id="message" >Press The Button!</p>
+<p>There are <span id="numnodes">this many random nodes</span> available</p>
 <br>
 <p> To use with monero-wallet-cli, just use these commands </p>
 <h3>Windows</h3>
-<p><kbd>monero-wallet-cli.exe --daemon-host ADDRESS.OF.HOST:18081</kbd></p>
+<p><kbd>monero-wallet-cli.exe --daemon-address <span id="windows-node-ip">ADDRESS.OF.HOST</span>:18089</kbd></p>
 <h3>Unix-type (ubuntu, MacOS)</h3>
-<p><kbd>./monero-wallet-cli --daemon-host ADDRESS.OF.HOST:18081</kbd></p>
+<p><kbd>./monero-wallet-cli --daemon-address <span id="unix-node-ip">ADDRESS.OF.HOST</span>:18089</kbd></p>
 <br>
 <h3>Monero GUI</h3>
-<p>To use with the Monero GUI, enter the node address here (or the ip address). Be sure to enter the port (18081).
+<p>To use with the Monero GUI, enter the node address here (or the ip address). Be sure to enter the proper port!
 <img src="monero_gui_example.png" width="600">
 
-<h3>Available Moneroworld Open Node Addresses</h3>
-<br>
-<p><code>node.moneroworld.com:18081</code></p>
-<p>Largest list of open nodes. This includes the geo-located nodes below. Anyone can add nodes.</p>
-<p><code>europe.moneroworld.com:18081</code></p>
-<p>Nodes in Europe.</p>
-<p><code>useast.moneroworld.com:18081</code></p>
-<p>Nodes in US Eastern</p>
-<p><code>uswest.moneroworld.com:18081</code></p>
-<p>Nodes in US Western</p>
-<p><code>india.moneroworld.com:18081</code></p>
-<p>Nodes in India</p>
-<p><code>southafrica.moneroworld.com:18081</code></p>
-<p>Nodes in South Africa</p>
-<p><code>china.moneroworld.com:18081</code></p>
-<p>Nodes in China</p>
-
-
-<br>
-
-<p>If you would like to offer your node up for inclusion in the Moneroworld Network of Open Nodes, please email me at gingeropolous@tutanota.com.</p>
+<h3>Non-random Moneroworld Open Node Addresses</h3>
+<iframe data-aa='470448' src='//ad.a-ads.com/470448?size=120x60' scrolling='no' style='width:120px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
 <p>How does it work? the open node addresses actually point to many different nodes - when you request one, one in the list is selected. So if it doesn't work once, just try again.</p>
 <br>
+<p><kbd>--daemon-host node.xmrbackb.one</kbd></p>
+<p>A high speed node network maintained by Snipa, developer and maintainer of xmrpool.net</p>
+<p><kbd>--daemon-host node.moneroworld.com</kbd></p>
+<p>Largest list of open nodes. This includes the geo-located nodes below.</p>
+<p><kbd>--daemon-host europe.moneroworld.com</kbd></p>
+<p>Nodes in Europe.</p>
+<p><kbd>--daemon-host useast.moneroworld.com</kbd></p>
+<p>Nodes in US Eastern</p>
+<p><kbd>--daemon-host uswest.moneroworld.com</kbd></p>
+<p>Nodes in US Western</p>
+<p><kbd>--daemon-host southafrica.moneroworld.com</kbd></p>
+<p>Nodes in South Africa</p>
+
+<br>
+
+<p>If you would like to offer your node up for inclusion in the Moneroworld Network of Open Nodes, you have two options.</p>
+<p>Option 1: you can simply add the following code to the launch of your daemon (and open your firewall), and the MoneroWorld script will sniff you out and add your node to the random list</p>
+<p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 18089 --restricted-rpc --confirm-external-bind</kbd></p>
+<p>Option 2: You can ask to be added to one of the address collection. There is limited space in these, so I only add high reliability nodes. You still need to launch your daemon with some special flags, and then please email me at gingeropolous@tutanota.com to ask me to add the node.</p>
+<p><kbd>--rpc-bind-ip YOUR.EXTERNAL_IP.GOES.HERE --rpc-bind-port 18081 --restricted-rpc --confirm-external-bind</kbd></p>
+<br>
+<p><a href="https://github.com/Gingeropolous/moneriote">Run the script on your own daemon!<a/> 
 <h3>Hidden Nodes</h3>
 <p>i2p: gyzyfxa6y2ayqbycvci3dz2pc2tjf6rnkcttvb3aubtxawkrmg5q.b32.i2p</p>
 <p>Please consider only using this to push transactions and not full wallet synchronization.</p>
 <p>monerotools.i2p also has a raw transaction pusher</p>
-
-
-<script>
-
-function GetValue()
-{
-    var myarray= new Array();
-
-myarray[1]= "107.13.138.161";
-myarray[1+1]= "104.140.201.42";
-myarray[1+1+1]= "23.228.193.90";
-myarray[1+1+1+1]= "79.118.68.109";
-myarray[1+1+1+1+1]= "185.112.158.127";
-myarray[1+1+1+1+1+1]= "5.9.2.145";
-myarray[1+1+1+1+1+1+1]= "158.69.242.133";
-myarray[1+1+1+1+1+1+1+1]= "52.90.250.162";
-myarray[1+1+1+1+1+1+1+1+1]= "67.211.219.45";
-myarray[1+1+1+1+1+1+1+1+1+1]= "144.76.63.44";
-myarray[1+1+1+1+1+1+1+1+1+1+1]= "104.207.130.234";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1]= "188.68.39.133";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1]= "94.23.6.119";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "107.167.87.242";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "138.201.221.109";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "46.255.20.102";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "47.18.126.206";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "107.167.93.58";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "98.151.16.60";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "167.88.8.173";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "158.69.243.222";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "162.243.39.219";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "158.69.245.138";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "188.68.58.97";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "85.194.238.130";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "68.168.221.17";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "88.99.37.213";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "85.194.238.131";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "54.86.143.72";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "169.47.8.204";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "64.137.185.205";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "5.9.100.248";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "109.74.5.228";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "176.31.117.66";
-myarray[1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1]= "104.168.99.235";
-   var random = myarray[Math.floor(Math.random() * myarray.length)];
-   document.getElementById("message").innerHTML=random;
-}
-</script>
-
+<br>
+<h1>Tor remote nodes</h1>
+<p>monerowinfamlvkp.onion </p>
